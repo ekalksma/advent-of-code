@@ -69,7 +69,7 @@ def get_data(day):
 def run(day, year=2020):
     print(f"AOC {year} Day {day}")
 
-    mod = __import__("day01.solution")
+    mod = __import__(format_foldername(day) + ".solution" )
     data = get_data(day)
 
     part1Time = run_part(1, mod, data)
