@@ -40,19 +40,12 @@ def calc_points(input):
             return 0 + points[input[1]]
 
 def calc_shape(input):
+    lose = {'A': 'Z', 'B': 'X', 'C': 'Y'}
+    win = {'A': 'Y', 'B': 'Z', 'C': 'X'}
+    
     if (input[1] == 'Y'):
         return input[0]
     elif(input[1] == 'X'):
-        if input[0] == 'A':
-            return 'Z'
-        elif input[0] == 'B':
-            return 'X'
-        elif input[0] == 'C':
-            return 'Y'
+        return lose[input[0]]
     elif(input[1] == 'Z'):
-        if input[0] == 'A':
-            return 'Y'
-        elif input[0] == 'B':
-            return 'Z'
-        elif input[0] == 'C':
-            return 'X'
+        return win[input[0]]
