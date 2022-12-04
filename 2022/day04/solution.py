@@ -2,11 +2,9 @@ def part1(data):
     input = data.splitlines()
     num_pairs = 0
     for line in input:
-        pairs = line.split(",")
-        pair_one = pairs[0].split("-")
-        pair_two = pairs[1].split("-")
+        pairs = line.replace(",","-").split("-")
         
-        if (int(pair_one[0]) >= int(pair_two[0]) and int(pair_one[1]) <= int(pair_two[1])) or (int(pair_two[0]) >= int(pair_one[0]) and int(pair_two[1]) <= int(pair_one[1])):
+        if (int(pairs[0]) >= int(pairs[2]) and int(pairs[1]) <= int(pairs[3])) or (int(pairs[2]) >= int(pairs[0]) and int(pairs[3]) <= int(pairs[1])):
             num_pairs += 1
 
     return num_pairs
@@ -15,11 +13,9 @@ def part2(data):
     input = data.splitlines()
     num_pairs = 0
     for line in input:
-        pairs = line.split(",")
-        pair_one = pairs[0].split("-")
-        pair_two = pairs[1].split("-")
+        pairs = line.replace(",","-").split("-")
 
-        if int(pair_two[0]) <= int(pair_one[1]) and int(pair_two[1]) >= int(pair_one[0]):
+        if int(pairs[2]) <= int(pairs[1]) and int(pairs[3]) >= int(pairs[0]):
             num_pairs += 1
 
     return num_pairs
