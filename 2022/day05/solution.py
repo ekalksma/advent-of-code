@@ -38,8 +38,6 @@ def part2(data):
 
         for x in reversed(temp):
                 stacks[moves[2]-1].append(x)
-
-
     
     for stack in stacks:
         message.append(stack.pop())
